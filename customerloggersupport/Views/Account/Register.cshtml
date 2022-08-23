@@ -1,0 +1,131 @@
+﻿@model customerloggersupport.Models.CustLogInfoModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="navbar-collapse collapse" align="center" style="background-color:aliceblue; height: 420px;width:370px;border:double;">
+
+
+    <h2 align="center">User Registration</h2>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        <table align="center">
+            <p> Complaint Register Successfully</p>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.LogId)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.LogId)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(model => model.LogId, null, new { @class = "text text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CustEmail)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.CustEmail)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(model => model.CustEmail, null, new { @class = "text text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CustName, htmlAttributes: new { @class = "control-label col-md-2" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.CustName, new { htmlAttributes = new { @class = "form-control" } })
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.CustName, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.LogStatus)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.LogStatus)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(model => model.LogStatus, null, new { @class = "text text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.UserId)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.UserId)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(model => model.UserId, null, new { @class = "text text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Description)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Description)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(model => model.Description, null, new { @class = "text text-danger" })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="Submit" value="Register" />
+                            </td>
+                            <td>
+                                <input type="reset" value="Reset" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                </td>
+            </tr>
+        </table>
+    }
+</div>

@@ -1,0 +1,27 @@
+﻿@if (Session["EmailID"] == null)
+{
+
+    <ul class="nav navbar-nav navbar-right" style="font-size:20px;font-weight:200;">
+
+        @Html.ActionLink("Register", "Register", "Account", null, null)
+
+
+        @Html.ActionLink("Login", "Login", "Account", null, null)
+
+
+    </ul>
+
+    <br />
+}
+else
+{
+<ul class="nav navbar-nav navbar-right">
+
+    @Html.ActionLink("Hi!" + Session["Email"], "Index", "Home", null, null)
+
+
+
+    @Html.ActionLink("Logout", "Logout", "Account", null, null)
+
+</ul>
+}
